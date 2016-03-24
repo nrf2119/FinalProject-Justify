@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Justify</string>
+    <string name="welcome_message">Welcome to Justify</string>
 </resources>
