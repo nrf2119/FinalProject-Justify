@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.EditText;
 
 import com.firebase.client.AuthData;
@@ -19,8 +18,6 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText keyEditText;
     private EditText valueEditText;
-
-
 
     // Rabiosa!!!
     //Shakria! :)
@@ -74,16 +71,5 @@ public class MainActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
-
-    public void goToQuestions(View view) {
-        Intent intent = new Intent(this, InquiryActivity.class);
-        startActivity(intent);
-
-    }
-
-    public void goToArguments(View view) {
-        Intent intent = new Intent(this, SeeMyOwnActivity.class);
-        startActivity(intent);
     }
 }
