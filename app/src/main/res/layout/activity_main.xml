@@ -14,7 +14,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/welcome_message"
-        android:gravity="center" />
+        android:gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:text="Inquiry"
+        android:gravity="center_horizontal"
+        android:onClick="goToQuestions"
+        android:padding="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:text="Arguments"
+        android:gravity="center_horizontal"
+        android:onClick="goToArguments"
+        android:padding="10dp"/>
+
 
 
 </LinearLayout>
