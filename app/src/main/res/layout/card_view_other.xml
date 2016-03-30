@@ -17,7 +17,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_marginRight="16dp"
-            android:src="@drawable/obama" />
+            android:src="@drawable/sad_obama" />
 
         <TextView
             android:id="@+id/other_user_name"
