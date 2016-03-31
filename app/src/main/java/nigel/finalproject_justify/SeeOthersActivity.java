@@ -1,5 +1,6 @@
 package nigel.finalproject_justify;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -53,6 +54,9 @@ public class SeeOthersActivity extends AppCompatActivity {
             case R.id.add:
                 Toast.makeText(this, "You can add!", Toast.LENGTH_SHORT).show();
                 return true;
+            case R.id.go_home:
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
             default:
                 return super.onOptionsItemSelected(item);
 

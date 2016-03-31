@@ -14,16 +14,18 @@ import java.util.List;
 public class InquiriesAdapter extends RecyclerView.Adapter<InquiryViewHolder> {
     private List<Inquiry> inquiries;
     private Context context;
+    private boolean inquiry;
 
-    public InquiriesAdapter(List<Inquiry> inquiries, Context context) {
+    public InquiriesAdapter(List<Inquiry> inquiries, Context context, boolean inquiry) {
         this.inquiries = inquiries;
         this.context = context;
+        this.inquiry = inquiry;
     }
 
     @Override
     public InquiryViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view_inquiry, parent, false);
-        return new InquiryViewHolder(view, context);
+        return new InquiryViewHolder(view, context, inquiry);
     }
 
     @Override

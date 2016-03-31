@@ -16,23 +16,30 @@ public class InquiryViewHolder extends RecyclerView.ViewHolder {
     private TextView inquiryQuestionView;
     private ImageView inquiryPhotoView;
     private Context context;
+    private boolean isInquiry;
 
-    public InquiryViewHolder(View itemView, final Context context) {
+    public InquiryViewHolder(View itemView, final Context context, boolean isInquiry) {
         super(itemView);
         cardView = (CardView) itemView.findViewById(R.id.card_view_inquiry);
         inquiryQuestionView = (TextView) itemView.findViewById(R.id.inquiry_question);
         inquiryPhotoView = (ImageView) itemView.findViewById(R.id.inquiry_photo);
         this.context = context;
+        this.isInquiry = isInquiry;
     }
 
-    public void bind(Inquiry inquiry) {
+    public void bind(final Inquiry inquiry) {
         inquiryQuestionView.setText(inquiry.question);
         inquiryPhotoView.setImageResource(inquiry.photoId);
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, PositionActivity.class);
-                context.startActivity(intent);
+                if (isInquiry) {
+                    Intent intent = new Intent(context, PositionActivity.class);
+                    context.startActivity(intent);
+                } else {
+                    Intent intent = new Intent(context, SeeOthersActivity.class);
+                    context.startActivity(intent);
+                }
 //                Toast.makeText(context, inquiryQuestionView.getText(), Toast.LENGTH_SHORT).show();
             }
         });

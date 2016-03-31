@@ -1,8 +1,8 @@
 package nigel.finalproject_justify;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
@@ -29,7 +29,7 @@ public class SeeMyOwnActivity extends AppCompatActivity {
         RecyclerView mrRecyclerView = (RecyclerView) findViewById(R.id.inquiry_recycler_view);
         mrRecyclerView.setHasFixedSize(true);
         mrRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        inquiryAdapter = new InquiriesAdapter(inquiries, this);
+        inquiryAdapter = new InquiriesAdapter(inquiries, this, false);
         mrRecyclerView.setAdapter(inquiryAdapter);
 
     }

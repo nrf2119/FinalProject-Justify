@@ -33,14 +33,14 @@ public class MakeArgumentActivity extends AppCompatActivity {
         Intent intent = getIntent();
     }
 
-    public void StartSeeOthersActivity(View view) {
+    public void startSeeOthersActivity(View view) {
         Intent intent = new Intent(this, SeeOthersActivity.class);
         startActivity(intent);
     }
 
     protected void onPause() {
         super.onPause();
-        sharedPreferences.edit().putString("message", inputMessage.getText().toString()).apply();
+//        sharedPreferences.edit().putString("message", inputMessage.getText().toString()).apply();
     }
 
     @Override
@@ -55,15 +55,15 @@ public class MakeArgumentActivity extends AppCompatActivity {
 
         switch (item.getItemId()) {
             case R.id.save:
-                String message = inputMessage.getText().toString();
-                if (message.length() != 0 && !message.equals("")) {
-                    Intent intent = new Intent();
-                    intent.putExtra("message", message);//Put Message to pass over intent
-
-                    setResult(RESULT_OK, intent);//Set result is OK
-
-                    finish();//finish activity
-                } else
+//                String message = inputMessage.getText().toString();
+//                if (message.length() != 0 && !message.equals("")) {
+//                    Intent intent = new Intent();
+//                    intent.putExtra("message", message);//Put Message to pass over intent
+//
+//                    setResult(RESULT_OK, intent);//Set result is OK
+//
+//                    finish();//finish activity
+//                } else
                     Toast.makeText(MakeArgumentActivity.this, "Please enter a message.", Toast.LENGTH_SHORT).show();
                 return true;
             default:

@@ -17,7 +17,6 @@ public class WritingJustificationView extends FrameLayout {
         init();
     }
 
-
     public WritingJustificationView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();

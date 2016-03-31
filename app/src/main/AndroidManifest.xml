@@ -21,9 +21,13 @@
         <activity
             android:name=".InquiryActivity"
             android:parentActivityName=".MainActivity"></activity>
-        <activity android:name=".MakeArgumentActivity"></activity>
+        <activity
+            android:name=".MakeArgumentActivity"
+            android:parentActivityName=".PositionActivity"></activity>
         <activity android:name=".SeeMyOwnActivity"></activity>
-        <activity android:name=".SeeOthersActivity"></activity>
+        <activity
+            android:name=".SeeOthersActivity"
+            android:parentActivityName=".MainActivity"></activity>
         <activity
             android:name=".PositionActivity"
             android:parentActivityName=".InquiryActivity"></activity>
