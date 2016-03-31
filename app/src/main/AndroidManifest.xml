@@ -18,6 +18,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".LogInActivity"></activity>
+        <activity
+            android:name=".InquiryActivity"
+            android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".MakeArgumentActivity"></activity>
+        <activity android:name=".SeeMyOwnActivity"></activity>
+        <activity android:name=".SeeOthersActivity"></activity>
+        <activity
+            android:name=".PositionActivity"
+            android:parentActivityName=".InquiryActivity"></activity>
     </application>
 
 </manifest>
