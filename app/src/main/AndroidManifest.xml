@@ -17,9 +17,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LogInActivity"></activity>
+        <activity android:name=".LogInActivity" />
         <activity
             android:name=".InquiryActivity"
+
+        <
+        <
+        <
+        <
+        <
+        <
+
+        < Updated
+            upstream
             android:parentActivityName=".MainActivity"></activity>
         <activity
             android:name=".MakeArgumentActivity"
@@ -28,9 +38,16 @@
         <activity
             android:name=".SeeOthersActivity"
             android:parentActivityName=".MainActivity"></activity>
+        =======
+        android:parentActivityName=".MainActivity" />
+        <activity android:name=".MakeArgumentActivity" />
+        <activity android:name=".SeeMyOwnActivity" />
+        <activity android:name=".SeeOthersActivity" />
+        >>>>>>> Stashed changes
         <activity
             android:name=".PositionActivity"
-            android:parentActivityName=".InquiryActivity"></activity>
+            android:parentActivityName=".InquiryActivity" />
+        <activity android:name=".ReadArgumentActivity"></activity>
     </application>
 
 </manifest>

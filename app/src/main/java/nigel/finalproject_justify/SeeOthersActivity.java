@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -26,7 +27,7 @@ public class SeeOthersActivity extends AppCompatActivity {
         RecyclerView mrRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         mrRecyclerView.setHasFixedSize(true);
         mrRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        otherClaimsAdapter =new OtherClaimsAdapter(otherClaims, this);
+        otherClaimsAdapter = new OtherClaimsAdapter(otherClaims, this);
         mrRecyclerView.setAdapter(otherClaimsAdapter);
 
     }
@@ -63,4 +64,8 @@ public class SeeOthersActivity extends AppCompatActivity {
         }
     }
 
+    public void startReadArgumentActivity(View view) {
+        Intent intent = new Intent(this, ReadArgumentActivity.class);
+        startActivity(intent);
+    }
 }
