@@ -35,7 +35,7 @@ public class WritingEvidenceView extends FrameLayout {
     }//this only contains one object, whoch the customview, we cannot adjust this
 
     private void init() {
-        inflate(getContext(), R.layout.writing_justification_view, this);
+        inflate(getContext(), R.layout.writing_evidence_view, this);
         textView = (TextView) findViewById(R.id.evidencetext);
         textView.setText("This is my position");
     }

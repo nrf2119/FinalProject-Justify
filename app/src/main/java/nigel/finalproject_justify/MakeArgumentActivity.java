@@ -30,7 +30,7 @@ public class MakeArgumentActivity extends AppCompatActivity {
         viewPager.setAdapter(new WritingTabPagerAdapter());//we need to set this adapter
         tabLayout.setupWithViewPager(viewPager);
 
-
+        Intent intent = getIntent();
     }
 
     public void StartSeeOthersActivity(View view) {
