@@ -20,8 +20,6 @@ public class MainActivity extends AppCompatActivity {
     private EditText keyEditText;
     private EditText valueEditText;
 
-    // Rabiosa!!!
-    //Shakria! :)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
