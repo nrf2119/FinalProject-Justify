@@ -18,13 +18,18 @@ public class ReadArgumentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_read_argument);
-        viewPager = (ViewPager) findViewById(R.id.view_pager);
-        tabLayout = (TabLayout) findViewById(R.id.tabs);
+        viewPager = (ViewPager) findViewById(R.id.reading_view_pager);
+        tabLayout = (TabLayout) findViewById(R.id.reading_tabs);
 
         viewPager.setAdapter(new ReadingTabPagerAdapter());
         tabLayout.setupWithViewPager(viewPager);
 
         Intent intent = getIntent();
+    }
+
+    protected void onPause() {
+        super.onPause();
+//        sharedPreferences.edit().putString("message", inputMessage.getText().toString()).apply();
     }
 
 
