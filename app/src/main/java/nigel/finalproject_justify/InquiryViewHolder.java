@@ -35,6 +35,8 @@ public class InquiryViewHolder extends RecyclerView.ViewHolder {
             public void onClick(View v) {
                 if (isInquiry) {
                     Intent intent = new Intent(context, PositionActivity.class);
+//                    intent.putExtra("Key", inquiry);
+//                    Inquiry i = (Inquiry) intent.getSerializableExtra("Key");
                     context.startActivity(intent);
                 } else {
                     Intent intent = new Intent(context, SeeOthersActivity.class);

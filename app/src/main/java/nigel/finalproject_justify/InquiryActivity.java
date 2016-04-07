@@ -9,6 +9,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.firebase.client.Firebase;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +18,8 @@ public class InquiryActivity extends AppCompatActivity {
 
     private List<Inquiry> inquiries;
     private InquiriesAdapter inquiryAdapter;
+    private Firebase rootRef;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,12 +28,15 @@ public class InquiryActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        initialData();
+        rootRef = new Firebase("https://justify.firebaseio.com/");
+        Firebase inquiriesRef = rootRef.child("inquiries");
+
+//        initialData();
 
         RecyclerView mrRecyclerView = (RecyclerView) findViewById(R.id.inquiry_recycler_view);
         mrRecyclerView.setHasFixedSize(true);
         mrRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        inquiryAdapter = new InquiriesAdapter(inquiries, this, true);
+        inquiryAdapter = new InquiriesAdapter(inquiriesRef, this, true);
         mrRecyclerView.setAdapter(inquiryAdapter);
     }
 

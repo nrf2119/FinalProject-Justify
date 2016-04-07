@@ -29,7 +29,6 @@ public class ReadArgumentActivity extends AppCompatActivity {
 
     protected void onPause() {
         super.onPause();
-//        sharedPreferences.edit().putString("message", inputMessage.getText().toString()).apply();
     }
 
 

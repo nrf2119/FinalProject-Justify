@@ -6,6 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.firebase.client.ChildEventListener;
+import com.firebase.client.DataSnapshot;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,6 +26,40 @@ public class InquiriesAdapter extends RecyclerView.Adapter<InquiryViewHolder> {
         this.inquiries = inquiries;
         this.context = context;
         this.inquiry = inquiry;
+    }
+
+    public InquiriesAdapter(Firebase inquiriesRef, Context context, boolean inquiry) {
+        this.context = context;
+        this.inquiry = inquiry;
+        inquiries = new ArrayList<>();
+        inquiriesRef.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                Inquiry inquiry = dataSnapshot.getValue(Inquiry.class);
+                inquiries.add(inquiry);
+                notifyDataSetChanged();
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+                Inquiry inquiry = dataSnapshot.getValue(Inquiry.class);
+                inquiries.remove(inquiry);
+                notifyDataSetChanged();
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
+        });
     }
 
     @Override
