@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -15,6 +16,8 @@ import java.util.List;
 public class SeeOthersActivity extends AppCompatActivity {
     private List<OtherClaim> otherClaims;
     private OtherClaimsAdapter otherClaimsAdapter;
+
+    private TextView otherClaimsQuestionTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +31,10 @@ public class SeeOthersActivity extends AppCompatActivity {
         mrRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         otherClaimsAdapter = new OtherClaimsAdapter(otherClaims, this);
         mrRecyclerView.setAdapter(otherClaimsAdapter);
+
+        otherClaimsQuestionTextView = (TextView) findViewById(R.id.other_claims_question);
+//        this is where we change the text of the top
+//        otherClaimsQuestionTextView.setText();
 
     }
 

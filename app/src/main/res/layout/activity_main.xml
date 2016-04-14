@@ -11,29 +11,43 @@
     tools:context="nigel.finalproject_justify.MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/welcome_message"
-        android:gravity="center_horizontal" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="30dp"
-        android:text="Inquiry"
         android:gravity="center_horizontal"
-        android:onClick="goToQuestions"
-        android:padding="10dp"/>
+        android:layout_marginTop="15dp"
+        android:textSize="50sp"
+        android:text="@string/welcome_message" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="30dp"
-        android:text="Arguments"
-        android:gravity="center_horizontal"
-        android:onClick="goToArguments"
-        android:padding="10dp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="goToQuestions"
+            android:padding="15dp"
+            android:text="Inquiry"
+            android:textSize="30dp"
+            android:id="@+id/home_inquiry_text_view"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:background="#e15a86" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="goToArguments"
+            android:padding="15dp"
+            android:text="Arguments"
+            android:textSize="30dp"
+            android:layout_below="@id/home_inquiry_text_view"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="#5AE1B5" />
+
+    </RelativeLayout>
 
 
 </LinearLayout>

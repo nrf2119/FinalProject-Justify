@@ -27,9 +27,9 @@ public class ReadArgumentActivity extends AppCompatActivity {
         Intent intent = getIntent();
     }
 
-    protected void onPause() {
-        super.onPause();
-    }
+//    protected void onPause() {
+//        super.onPause();
+//    }
 
 
 }

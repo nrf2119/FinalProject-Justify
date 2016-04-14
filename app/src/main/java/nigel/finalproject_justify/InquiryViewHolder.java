@@ -2,8 +2,11 @@ package nigel.finalproject_justify;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Base64;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -29,13 +32,13 @@ public class InquiryViewHolder extends RecyclerView.ViewHolder {
 
     public void bind(final Inquiry inquiry) {
         inquiryQuestionView.setText(inquiry.question);
-        inquiryPhotoView.setImageResource(inquiry.photoId);
+        inquiryPhotoView.setImageBitmap(byteStringToBitmap(inquiry.photo));
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (isInquiry) {
                     Intent intent = new Intent(context, PositionActivity.class);
-//                    intent.putExtra("Key", inquiry);
+                    intent.putExtra(Keys.CHOSEN_INQUIRY_CARD, inquiry);
 //                    Inquiry i = (Inquiry) intent.getSerializableExtra("Key");
                     context.startActivity(intent);
                 } else {
@@ -47,6 +50,10 @@ public class InquiryViewHolder extends RecyclerView.ViewHolder {
         });
     }
 
+    private Bitmap byteStringToBitmap(String byteString) {
+        byte[] imageAsBytes = Base64.decode(byteString.getBytes(), Base64.DEFAULT);
+        return BitmapFactory.decodeByteArray(imageAsBytes, 0, imageAsBytes.length);
+    }
 }
 
 
