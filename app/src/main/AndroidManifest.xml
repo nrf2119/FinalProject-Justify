@@ -29,12 +29,11 @@
         <activity
             android:name=".SeeOthersActivity"
             android:parentActivityName=".MainActivity"></activity>
+
         <activity
             android:name=".PositionActivity"
             android:parentActivityName=".InquiryActivity" />
-        <activity
-            android:name=".ReadArgumentActivity"
-            android:parentActivityName=".SeeOthersActivity"></activity>
+        <activity android:name=".ReadArgumentActivity"></activity>
     </application>
 
 </manifest>
