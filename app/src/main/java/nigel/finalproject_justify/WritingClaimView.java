@@ -3,14 +3,15 @@ package nigel.finalproject_justify;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.util.AttributeSet;
+import android.widget.EditText;
 import android.widget.FrameLayout;
-import android.widget.TextView;
 
 /**
  * Created by diegoferope on 3/30/16.
  */
 public class WritingClaimView extends FrameLayout {
-    private TextView textView;
+    public EditText editText = (EditText) findViewById(R.id.inputClaim);
+
 
     public WritingClaimView(Context context) {
         super(context);
@@ -36,7 +37,5 @@ public class WritingClaimView extends FrameLayout {
 
     private void init() {
         inflate(getContext(), R.layout.writing_claim_view, this);
-        textView = (TextView) findViewById(R.id.claimtext);
-        textView.setText("This is my position");
     }
 }

@@ -4,17 +4,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:id="@+id/evidencetext"
-        android:layout_height="wrap_content"
-        android:text="This is my position" />
 
     <EditText
-        android:id="@+id/inputClaim"
+        android:id="@+id/inputEvidence"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="wrap_content"
         android:singleLine="false"
+        android:hint="Summarize here your evidence"
+        android:layout_weight="1"
+        android:textColor="#000000"
+        android:gravity="top"
+        android:textColorHint="#d3d3d3" />
+
+    <EditText
+        android:id="@+id/inputWebsite"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="false"
+        android:hint="Paste here the website"
         android:textColor="#000000"
         android:gravity="top"
         android:textColorHint="#d3d3d3" />

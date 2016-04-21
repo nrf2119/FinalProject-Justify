@@ -34,9 +34,22 @@ public class MakeArgumentActivity extends AppCompatActivity {
     }
 
     public void startSeeOthersActivity(View view) {
-        Intent intent = new Intent(this, SeeOthersActivity.class);
-        startActivity(intent);
+//        Intent intent = new Intent(this, SeeOthersActivity.class);
+//        startActivity(intent);
+
+        EditText editText1 = (EditText) findViewById(R.id.inputClaim);
+        EditText editText2 = (EditText) findViewById(R.id.inputEvidence);
+        EditText editText3 = (EditText) findViewById(R.id.inputJustification);
+
+        String one = editText1.getText().toString();
+        String two = editText2.getText().toString();
+        String three = editText3.getText().toString();
+
+        Argument argument = new Argument(one, two, three);
+
+        Toast.makeText(this, one + two + three, Toast.LENGTH_SHORT).show();
     }
+
 
     protected void onPause() {
         super.onPause();

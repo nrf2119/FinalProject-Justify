@@ -3,14 +3,14 @@ package nigel.finalproject_justify;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.util.AttributeSet;
+import android.widget.EditText;
 import android.widget.FrameLayout;
-import android.widget.TextView;
 
 /**
  * Created by diegoferope on 3/30/16.
  */
 public class WritingJustificationView extends FrameLayout {
-    private TextView textView;
+    public EditText editText;
 
     public WritingJustificationView(Context context) {
         super(context);
@@ -35,8 +35,8 @@ public class WritingJustificationView extends FrameLayout {
 
     private void init() {
         inflate(getContext(), R.layout.writing_justification_view, this);
-        textView = (TextView) findViewById(R.id.justificationtext);
-        textView.setText("This is my position");
     }
+
+
 }
 

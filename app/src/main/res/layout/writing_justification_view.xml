@@ -4,11 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:id="@+id/justificationtext"
-        android:layout_height="wrap_content"
-        android:text="This is my position" />
 
     <EditText
         android:id="@+id/inputJustification"
@@ -17,6 +12,7 @@
         android:singleLine="false"
         android:textColor="#000000"
         android:gravity="top"
+        android:hint="Why does your evidence support your conclusion?"
         android:textColorHint="#d3d3d3" />
 
     <Button
