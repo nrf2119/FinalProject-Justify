@@ -15,6 +15,7 @@ import java.util.List;
 public class SeeMyOwnActivity extends AppCompatActivity {
 
     private List<Inquiry> inquiries;
+    private List<String> keys;
     private InquiriesAdapter inquiryAdapter;
 
     @Override
@@ -29,7 +30,7 @@ public class SeeMyOwnActivity extends AppCompatActivity {
         RecyclerView mrRecyclerView = (RecyclerView) findViewById(R.id.inquiry_recycler_view);
         mrRecyclerView.setHasFixedSize(true);
         mrRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        inquiryAdapter = new InquiriesAdapter(inquiries, this, false);
+        inquiryAdapter = new InquiriesAdapter(inquiries, keys, this, false);
         mrRecyclerView.setAdapter(inquiryAdapter);
 
     }

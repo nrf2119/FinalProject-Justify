@@ -18,12 +18,14 @@ import java.util.List;
  * Created by ccteadmin on 3/29/16.
  */
 public class InquiriesAdapter extends RecyclerView.Adapter<InquiryViewHolder> {
-    private List<Inquiry> inquiries;
+    private List<Inquiry> inquiries = new ArrayList<>();
+    private List<String> keys = new ArrayList<>();
     private Context context;
     private boolean inquiry;
 
-    public InquiriesAdapter(List<Inquiry> inquiries, Context context, boolean inquiry) {
+    public InquiriesAdapter(List<Inquiry> inquiries, List<String> keys, Context context, boolean inquiry) {
         this.inquiries = inquiries;
+        this.keys = keys;
         this.context = context;
         this.inquiry = inquiry;
     }
@@ -35,8 +37,11 @@ public class InquiriesAdapter extends RecyclerView.Adapter<InquiryViewHolder> {
         inquiriesRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                Object obj = dataSnapshot.getValue();
                 Inquiry inquiry = dataSnapshot.getValue(Inquiry.class);
+                String inquiryKey = dataSnapshot.getKey();
                 inquiries.add(inquiry);
+                keys.add(inquiryKey);
                 notifyDataSetChanged();
             }
 
@@ -71,7 +76,8 @@ public class InquiriesAdapter extends RecyclerView.Adapter<InquiryViewHolder> {
     @Override
     public void onBindViewHolder(InquiryViewHolder holder, int position) {
         Inquiry inquiry = inquiries.get(position);
-        holder.bind(inquiry);
+        String inquiryKey = keys.get(position);
+        holder.bind(inquiry, inquiryKey);
     }
 
     @Override

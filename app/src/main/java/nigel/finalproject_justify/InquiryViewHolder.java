@@ -30,7 +30,7 @@ public class InquiryViewHolder extends RecyclerView.ViewHolder {
         this.isInquiry = isInquiry;
     }
 
-    public void bind(final Inquiry inquiry) {
+    public void bind(final Inquiry inquiry, final String inquiryKey) {
         inquiryQuestionView.setText(inquiry.question);
         inquiryPhotoView.setImageBitmap(byteStringToBitmap(inquiry.photo));
         cardView.setOnClickListener(new View.OnClickListener() {
@@ -39,6 +39,7 @@ public class InquiryViewHolder extends RecyclerView.ViewHolder {
                 if (isInquiry) {
                     Intent intent = new Intent(context, PositionActivity.class);
                     intent.putExtra(Keys.CHOSEN_INQUIRY_CARD, inquiry);
+                    intent.putExtra(Keys.CHOSEN_INQUIRY_KEY, inquiryKey);
 //                    Inquiry i = (Inquiry) intent.getSerializableExtra("Key");
                     context.startActivity(intent);
                 } else {

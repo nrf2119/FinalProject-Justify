@@ -5,4 +5,5 @@ package nigel.finalproject_justify;
  */
 public interface Keys {
     String CHOSEN_INQUIRY_CARD = "something";
+    String CHOSEN_INQUIRY_KEY = "something else";
 }

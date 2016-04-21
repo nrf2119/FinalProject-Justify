@@ -8,6 +8,10 @@ public class Argument {
     public String evidence;
     public String justification;
 
+    public Argument() {
+        this("", "", "");
+    }
+
     public Argument(String claim, String evidence, String justification) {
         this.claim = claim;
         this.evidence = evidence;

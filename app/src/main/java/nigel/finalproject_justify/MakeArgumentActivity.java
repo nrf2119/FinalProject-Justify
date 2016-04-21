@@ -12,6 +12,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.firebase.client.Firebase;
+
 
 public class MakeArgumentActivity extends AppCompatActivity {
 
@@ -19,6 +21,12 @@ public class MakeArgumentActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private EditText inputMessage;
     private SharedPreferences sharedPreferences;
+
+    private Firebase rootRef;
+    private Firebase userRef;
+
+    String key;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +39,7 @@ public class MakeArgumentActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
 
         Intent intent = getIntent();
+        key = intent.getStringExtra(Keys.CHOSEN_INQUIRY_KEY).toString();
     }
 
     public void startSeeOthersActivity(View view) {
@@ -46,6 +55,8 @@ public class MakeArgumentActivity extends AppCompatActivity {
         String three = editText3.getText().toString();
 
         Argument argument = new Argument(one, two, three);
+        rootRef = new Firebase("https://justify.firebaseio.com/");
+        rootRef.child("inquiries/" + key + "/arguments").push().setValue(argument);
 
         Toast.makeText(this, one + two + three, Toast.LENGTH_SHORT).show();
     }
