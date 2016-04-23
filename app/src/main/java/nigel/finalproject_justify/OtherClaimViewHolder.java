@@ -26,9 +26,9 @@ public class OtherClaimViewHolder extends RecyclerView.ViewHolder {
         this.context = context;
     }
 
-    public void bind(OtherClaim otherClaim) {
-        userNameView.setText(otherClaim.userName);
-        positionPhotoView.setImageResource(otherClaim.positionPhotoId);
+    public void bind(Argument otherClaim) {
+        userNameView.setText(otherClaim.user);
+//        positionPhotoView.setImageResource(otherClaim.positionPhotoId);
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

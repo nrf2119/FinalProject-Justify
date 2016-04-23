@@ -13,7 +13,7 @@ import android.widget.Toast;
 import java.util.List;
 
 public class SeeOthersActivity extends AppCompatActivity {
-    private List<OtherClaim> otherClaims;
+    private List<Argument> otherClaims;
     private OtherClaimsAdapter otherClaimsAdapter;
 
     private TextView otherClaimsQuestionTextView;

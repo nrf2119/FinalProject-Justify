@@ -6,6 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.firebase.client.ChildEventListener;
+import com.firebase.client.DataSnapshot;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,12 +19,49 @@ import java.util.List;
  */
 public class OtherClaimsAdapter extends RecyclerView.Adapter<OtherClaimViewHolder> {
 
-    private List<OtherClaim> otherClaims;
+    private List<Argument> otherClaims;
+    private List<String> keys = new ArrayList<>();
     private Context context;
 
-    public OtherClaimsAdapter(List<OtherClaim> otherClaims, Context context) {
+
+    public OtherClaimsAdapter(List<Argument> otherClaims, Context context) {
         this.otherClaims = otherClaims;
         this.context = context;
+    }
+
+    public OtherClaimsAdapter(final Firebase othersRef, Context context) {
+        this.context = context;
+        otherClaims = new ArrayList<>();
+        othersRef.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                Argument argument = dataSnapshot.getValue(Argument.class);
+                otherClaims.add(argument);
+                notifyDataSetChanged();
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+                Argument argument = dataSnapshot.getValue(Argument.class);
+                otherClaims.remove(argument);
+                notifyDataSetChanged();
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
+        });
     }
 
     @Override
@@ -29,7 +72,7 @@ public class OtherClaimsAdapter extends RecyclerView.Adapter<OtherClaimViewHolde
 
     @Override
     public void onBindViewHolder(OtherClaimViewHolder holder, int position) {
-        OtherClaim otherClaim = otherClaims.get(position);
+        Argument otherClaim = otherClaims.get(position);
         holder.bind(otherClaim);
     }
 
