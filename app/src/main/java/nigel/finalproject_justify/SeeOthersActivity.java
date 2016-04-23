@@ -48,11 +48,13 @@ public class SeeOthersActivity extends AppCompatActivity {
         otherClaimsAdapter = new OtherClaimsAdapter(argumentsRef, this);
         mrRecyclerView.setAdapter(otherClaimsAdapter);
 
-        if (argument.agreement) {
-            imageView.setImageResource(R.drawable.icon_agree);
-        } else {
-            imageView.setImageResource(R.drawable.icon_disagree);
-        }
+//        if (argument.agreement) {
+//            imageView.setImageResource(R.drawable.icon_agree);
+//        } else if (!argument.agreement){
+//            imageView.setImageResource(R.drawable.icon_disagree);
+//        } else {
+//            Toast.makeText(this, "There are no arguments yet", Toast.LENGTH_LONG).show();
+//        }
     }
 
 
