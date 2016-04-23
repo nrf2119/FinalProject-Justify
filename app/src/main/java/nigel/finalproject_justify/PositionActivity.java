@@ -16,6 +16,7 @@ public class PositionActivity extends AppCompatActivity {
     private ImageView chosenInquiryImageView;
     private TextView chosenInquiryTextView;
     String key;
+    Inquiry inquiry;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +27,7 @@ public class PositionActivity extends AppCompatActivity {
         chosenInquiryTextView = (TextView) findViewById(R.id.inquiry_question);
 
         Intent intent = getIntent();
-        Inquiry inquiry = (Inquiry) intent.getSerializableExtra(Keys.CHOSEN_INQUIRY_CARD);
+        inquiry = (Inquiry) intent.getSerializableExtra(Keys.CHOSEN_INQUIRY_CARD);
         key = intent.getStringExtra(Keys.CHOSEN_INQUIRY_KEY);
         chosenInquiryImageView.setImageBitmap(byteStringToBitmap(inquiry.photo));
         chosenInquiryTextView.setText(inquiry.question);
@@ -39,6 +40,7 @@ public class PositionActivity extends AppCompatActivity {
 
     public void agree(View view) {
         Intent intent = new Intent(this, MakeArgumentActivity.class);
+        intent.putExtra(Keys.CHOSEN_INQUIRY_CARD, inquiry);
         intent.putExtra(Keys.CHOSEN_INQUIRY_KEY, key);
         startActivity(intent);
 //        Toast.makeText(this, "You agree", Toast.LENGTH_SHORT).show();

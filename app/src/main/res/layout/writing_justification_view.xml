@@ -22,6 +22,6 @@
         android:id="@+id/publish"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
-        android:onClick="startSeeOthersActivity" />
+        android:onClick="publish" />
 
 </LinearLayout>

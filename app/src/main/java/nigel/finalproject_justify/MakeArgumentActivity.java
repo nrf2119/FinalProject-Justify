@@ -42,7 +42,7 @@ public class MakeArgumentActivity extends AppCompatActivity {
         key = intent.getStringExtra(Keys.CHOSEN_INQUIRY_KEY).toString();
     }
 
-    public void startSeeOthersActivity(View view) {
+    public void publish(View view) {
 //        Intent intent = new Intent(this, SeeOthersActivity.class);
 //        startActivity(intent);
 
@@ -60,7 +60,10 @@ public class MakeArgumentActivity extends AppCompatActivity {
         rootRef = new Firebase("https://justify.firebaseio.com/");
         rootRef.child("inquiries/" + key + "/arguments").push().setValue(argument);
 
-        Toast.makeText(this, one + two + three, Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+
+        Toast.makeText(this, "You have published an argument", Toast.LENGTH_SHORT).show();
     }
 
 
