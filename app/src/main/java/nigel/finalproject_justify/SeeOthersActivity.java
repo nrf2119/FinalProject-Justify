@@ -21,6 +21,7 @@ public class SeeOthersActivity extends AppCompatActivity {
 
     private Firebase rootRef;
     private Firebase argsRef;
+    //updATED
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
