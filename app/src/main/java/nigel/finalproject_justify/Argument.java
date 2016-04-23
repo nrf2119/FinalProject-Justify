@@ -1,9 +1,11 @@
 package nigel.finalproject_justify;
 
+import java.io.Serializable;
+
 /**
  * Created by diegoferope on 4/20/16.
  */
-public class Argument {
+public class Argument implements Serializable {
     public String claim;
     public String evidence;
     public String justification;
