@@ -1,6 +1,7 @@
 package nigel.finalproject_justify;
 
 import java.io.Serializable;
+import java.util.Map;
 
 /**
  * Created by ccteadmin on 3/29/16.
@@ -9,6 +10,7 @@ public class Inquiry implements Serializable {
     public String question;
     public String photo;
     public int photoId;
+    public Map<String, Argument> arguments;
 
     public Inquiry() {
     }

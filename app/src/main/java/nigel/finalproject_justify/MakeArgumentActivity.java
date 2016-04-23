@@ -53,8 +53,10 @@ public class MakeArgumentActivity extends AppCompatActivity {
         String one = editText1.getText().toString();
         String two = editText2.getText().toString();
         String three = editText3.getText().toString();
+        String user = "user";
 
-        Argument argument = new Argument(one, two, three);
+        Argument argument = new Argument(one, two, three, user);
+
         rootRef = new Firebase("https://justify.firebaseio.com/");
         rootRef.child("inquiries/" + key + "/arguments").push().setValue(argument);
 
