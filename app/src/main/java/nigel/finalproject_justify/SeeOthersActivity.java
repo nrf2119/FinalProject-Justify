@@ -10,25 +10,32 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.firebase.client.Firebase;
+
 import java.util.List;
 
 public class SeeOthersActivity extends AppCompatActivity {
     private List<Argument> otherClaims;
     private OtherClaimsAdapter otherClaimsAdapter;
-
     private TextView otherClaimsQuestionTextView;
+
+    private Firebase rootRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_see_others);
 
+        rootRef = new Firebase("https://justify.firebaseio.com/");
+        Firebase argumentsRef = rootRef.child("arguments");
+
 
         RecyclerView mrRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         mrRecyclerView.setHasFixedSize(true);
         mrRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        otherClaimsAdapter = new OtherClaimsAdapter(otherClaims, this);
+        otherClaimsAdapter = new OtherClaimsAdapter(argumentsRef, this);
         mrRecyclerView.setAdapter(otherClaimsAdapter);
+
 
         otherClaimsQuestionTextView = (TextView) findViewById(R.id.other_claims_question);
 //        this is where we change the text of the top
