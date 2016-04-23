@@ -26,13 +26,14 @@ public class OtherClaimViewHolder extends RecyclerView.ViewHolder {
         this.context = context;
     }
 
-    public void bind(Argument otherClaim) {
+    public void bind(final Argument otherClaim) {
         userNameView.setText(otherClaim.user);
 //        positionPhotoView.setImageResource(otherClaim.positionPhotoId);
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, ReadArgumentActivity.class);
+                intent.putExtra(Keys.CHOSEN_INQUIRY_CARD, otherClaim);
                 context.startActivity(intent);
 //                Toast.makeText(context, userNameView.getText(), Toast.LENGTH_SHORT).show();
             }

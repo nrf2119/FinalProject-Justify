@@ -11,6 +11,7 @@ public class Argument implements Serializable {
     public String justification;
     public String user;
     public String position;
+    public boolean agreement;
 
     public Argument() {
         this("", "", "", "");

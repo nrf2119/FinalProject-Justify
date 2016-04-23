@@ -26,6 +26,7 @@ public class MakeArgumentActivity extends AppCompatActivity {
     private Firebase userRef;
 
     String key;
+    private boolean agreement;
 
 
     @Override
@@ -40,6 +41,7 @@ public class MakeArgumentActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         key = intent.getStringExtra(Keys.CHOSEN_INQUIRY_KEY).toString();
+        agreement = intent.getBooleanExtra(Keys.AGREE_OR_DISAGREE, false);
     }
 
     public void publish(View view) {
@@ -56,6 +58,7 @@ public class MakeArgumentActivity extends AppCompatActivity {
         String user = "user";
 
         Argument argument = new Argument(one, two, three, user);
+        argument.agreement = agreement;
 
         rootRef = new Firebase("https://justify.firebaseio.com/");
         rootRef.child("inquiries/" + key + "/arguments").push().setValue(argument);

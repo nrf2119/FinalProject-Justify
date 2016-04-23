@@ -42,6 +42,7 @@ public class PositionActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MakeArgumentActivity.class);
         intent.putExtra(Keys.CHOSEN_INQUIRY_CARD, inquiry);
         intent.putExtra(Keys.CHOSEN_INQUIRY_KEY, key);
+        intent.putExtra(Keys.AGREE_OR_DISAGREE, true);
         startActivity(intent);
 //        Toast.makeText(this, "You agree", Toast.LENGTH_SHORT).show();
     }
