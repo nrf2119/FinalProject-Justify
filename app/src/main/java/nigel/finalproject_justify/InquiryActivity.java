@@ -11,7 +11,6 @@ import android.widget.Toast;
 
 import com.firebase.client.Firebase;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class InquiryActivity extends AppCompatActivity {
@@ -31,7 +30,6 @@ public class InquiryActivity extends AppCompatActivity {
         rootRef = new Firebase("https://justify.firebaseio.com/");
         Firebase inquiriesRef = rootRef.child("inquiries");
 
-//        initialData();
 
         RecyclerView mrRecyclerView = (RecyclerView) findViewById(R.id.inquiry_recycler_view);
         mrRecyclerView.setHasFixedSize(true);
@@ -40,15 +38,6 @@ public class InquiryActivity extends AppCompatActivity {
         mrRecyclerView.setAdapter(inquiryAdapter);
     }
 
-
-
-    private void initialData() {
-        inquiries = new ArrayList<>();
-        inquiries.add(new Inquiry("Can Facebook be used as a learning tool in schools?", R.drawable.facebook_school));
-        inquiries.add(new Inquiry("Has Barack Obama been a good president?", R.drawable.sad_obama));
-        inquiries.add(new Inquiry("Does eating locally help the environment?", R.drawable.eat_local));
-
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

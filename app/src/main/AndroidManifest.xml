@@ -25,7 +25,7 @@
         <activity
             android:name=".MakeArgumentActivity"
             android:parentActivityName=".MainActivity"></activity>
-        <activity android:name=".SeeMyOwnActivity"></activity>
+        <activity android:name=".GoToArguments"></activity>
         <activity
             android:name=".SeeOthersActivity"
             android:parentActivityName=".MainActivity"></activity>

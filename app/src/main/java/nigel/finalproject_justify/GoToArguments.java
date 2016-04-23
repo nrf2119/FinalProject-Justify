@@ -9,14 +9,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import java.util.ArrayList;
+import com.firebase.client.Firebase;
+
 import java.util.List;
 
-public class SeeMyOwnActivity extends AppCompatActivity {
+public class GoToArguments extends AppCompatActivity {
 
     private List<Inquiry> inquiries;
     private List<String> keys;
     private InquiriesAdapter inquiryAdapter;
+    private Firebase rootRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,20 +27,25 @@ public class SeeMyOwnActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        initialData();
+        rootRef = new Firebase("https://justify.firebaseio.com/");
+        Firebase inquiriesRef = rootRef.child("inquiries");
+
+        //What was here before we got data from firebase
+//        RecyclerView mrRecyclerView = (RecyclerView) findViewById(R.id.inquiry_recycler_view);
+//        mrRecyclerView.setHasFixedSize(true);
+//        mrRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+//        inquiryAdapter = new InquiriesAdapter(inquiries, keys, this, false);
+//        mrRecyclerView.setAdapter(inquiryAdapter);
+
 
         RecyclerView mrRecyclerView = (RecyclerView) findViewById(R.id.inquiry_recycler_view);
         mrRecyclerView.setHasFixedSize(true);
         mrRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        inquiryAdapter = new InquiriesAdapter(inquiries, keys, this, false);
+        inquiryAdapter = new InquiriesAdapter(inquiriesRef, this, false);
         mrRecyclerView.setAdapter(inquiryAdapter);
 
     }
 
-    private void initialData() {
-        inquiries = new ArrayList<>();
-        inquiries.add(new Inquiry("Can Facebook be used as a learning tool in schools?", R.drawable.facebook_school));
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

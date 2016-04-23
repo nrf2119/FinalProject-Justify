@@ -10,7 +10,6 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class SeeOthersActivity extends AppCompatActivity {
@@ -24,7 +23,6 @@ public class SeeOthersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_see_others);
 
-        initialData();
 
         RecyclerView mrRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         mrRecyclerView.setHasFixedSize(true);
@@ -38,16 +36,6 @@ public class SeeOthersActivity extends AppCompatActivity {
 
     }
 
-    private void initialData() {
-        otherClaims = new ArrayList<>();
-        otherClaims.add(new OtherClaim("Nigel", R.drawable.icon_agree));
-        otherClaims.add(new OtherClaim("Diego", R.drawable.icon_disagree));
-        otherClaims.add(new OtherClaim("Jenna", R.drawable.icon_disagree));
-        otherClaims.add(new OtherClaim("Sandra", R.drawable.icon_disagree));
-        otherClaims.add(new OtherClaim("Claude", R.drawable.icon_agree));
-        otherClaims.add(new OtherClaim("Lincoln", R.drawable.icon_agree));
-
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

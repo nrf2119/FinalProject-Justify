@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goToArguments(View view) {
-        Intent intent = new Intent(this, SeeMyOwnActivity.class);
+        Intent intent = new Intent(this, GoToArguments.class);
         startActivity(intent);
     }
 }
