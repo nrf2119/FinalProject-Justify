@@ -17,10 +17,12 @@ import java.util.List;
 public class SeeOthersActivity extends AppCompatActivity {
     private List<Argument> otherClaims;
     private OtherClaimsAdapter otherClaimsAdapter;
-    private TextView otherClaimsQuestionTextView;
+    private TextView otherClaimsUserTextView;
 
     private Firebase rootRef;
     private Firebase argsRef;
+    String key;
+    Argument argument;
     //updATED
 
     @Override
@@ -29,8 +31,13 @@ public class SeeOthersActivity extends AppCompatActivity {
         setContentView(R.layout.activity_see_others);
 
         rootRef = new Firebase("https://justify.firebaseio.com/");
-        Firebase argumentsRef = rootRef.child("arguments");
+        otherClaimsUserTextView = (TextView) findViewById(R.id.other_user_name);
 
+        Intent intent = getIntent();
+        argument = (Argument) intent.getSerializableExtra(Keys.CHOSEN_INQUIRY_CARD);
+        key = intent.getStringExtra(Keys.CHOSEN_INQUIRY_KEY);
+
+        Firebase argumentsRef = rootRef.child("inquiries/" + key + "/arguments");
 
         RecyclerView mrRecyclerView = (RecyclerView) findViewById(R.id.others_recycler_view);
         mrRecyclerView.setHasFixedSize(true);
@@ -38,10 +45,6 @@ public class SeeOthersActivity extends AppCompatActivity {
         otherClaimsAdapter = new OtherClaimsAdapter(argumentsRef, this);
         mrRecyclerView.setAdapter(otherClaimsAdapter);
 
-
-        otherClaimsQuestionTextView = (TextView) findViewById(R.id.other_claims_question);
-//        this is where we change the text of the top
-//        otherClaimsQuestionTextView.setText();
 
     }
 

@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * Created by ccteadmin on 3/29/16.
  */
-public class Inquiry implements Serializable {
+public class Inquiry extends Argument implements Serializable {
     public String question;
     public String photo;
     public int photoId;

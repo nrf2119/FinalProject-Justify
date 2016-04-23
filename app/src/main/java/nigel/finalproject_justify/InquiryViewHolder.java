@@ -44,6 +44,8 @@ public class InquiryViewHolder extends RecyclerView.ViewHolder {
                     context.startActivity(intent);
                 } else {
                     Intent intent = new Intent(context, SeeOthersActivity.class);
+                    intent.putExtra(Keys.CHOSEN_INQUIRY_CARD, inquiry);
+                    intent.putExtra(Keys.CHOSEN_INQUIRY_KEY, inquiryKey);
                     context.startActivity(intent);
                 }
 //                Toast.makeText(context, inquiryQuestionView.getText(), Toast.LENGTH_SHORT).show();
