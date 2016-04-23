@@ -54,7 +54,7 @@ public class SeeOthersActivity extends AppCompatActivity {
 //            imageView.setImageResource(R.drawable.icon_disagree);
 //        } else {
 //            Toast.makeText(this, "There are no arguments yet", Toast.LENGTH_LONG).show();
-//        }
+//        } hahahahah
     }
 
 
