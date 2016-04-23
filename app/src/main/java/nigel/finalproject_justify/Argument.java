@@ -10,7 +10,7 @@ public class Argument implements Serializable {
     public String evidence;
     public String justification;
     public String user;
-    public String position;
+    public String positionPhoto;
     public boolean agreement;
 
     public Argument() {

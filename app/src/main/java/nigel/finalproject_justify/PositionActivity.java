@@ -34,8 +34,12 @@ public class PositionActivity extends AppCompatActivity {
     }
 
     public void disagree(View view) {
+        Intent intent = new Intent(this, MakeArgumentActivity.class);
+        intent.putExtra(Keys.CHOSEN_INQUIRY_CARD, inquiry);
+        intent.putExtra(Keys.CHOSEN_INQUIRY_KEY, key);
+        intent.putExtra(Keys.AGREE_OR_DISAGREE, false);
         Toast.makeText(this, "You disagree", Toast.LENGTH_SHORT).show();
-
+        startActivity(intent);
     }
 
     public void agree(View view) {
@@ -43,8 +47,8 @@ public class PositionActivity extends AppCompatActivity {
         intent.putExtra(Keys.CHOSEN_INQUIRY_CARD, inquiry);
         intent.putExtra(Keys.CHOSEN_INQUIRY_KEY, key);
         intent.putExtra(Keys.AGREE_OR_DISAGREE, true);
+        Toast.makeText(this, "You agree", Toast.LENGTH_SHORT).show();
         startActivity(intent);
-//        Toast.makeText(this, "You agree", Toast.LENGTH_SHORT).show();
     }
 
     private Bitmap byteStringToBitmap(String byteString) {
