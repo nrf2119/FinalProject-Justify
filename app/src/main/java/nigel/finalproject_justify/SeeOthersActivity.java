@@ -30,7 +30,7 @@ public class SeeOthersActivity extends AppCompatActivity {
         Firebase argumentsRef = rootRef.child("arguments");
 
 
-        RecyclerView mrRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        RecyclerView mrRecyclerView = (RecyclerView) findViewById(R.id.others_recycler_view);
         mrRecyclerView.setHasFixedSize(true);
         mrRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         otherClaimsAdapter = new OtherClaimsAdapter(argumentsRef, this);
