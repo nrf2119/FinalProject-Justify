@@ -20,6 +20,7 @@ public class SeeOthersActivity extends AppCompatActivity {
     private TextView otherClaimsQuestionTextView;
 
     private Firebase rootRef;
+    private Firebase argsRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
