@@ -40,4 +40,8 @@ public class ReadJustificationView extends FrameLayout {
         textView.setText("This is my position");
     }
 
+    public void setText(String text) {
+        textView.setText(text);
+    }
+
 }

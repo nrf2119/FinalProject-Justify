@@ -9,6 +9,12 @@ import android.view.ViewGroup;
  */
 public class ReadingTabPagerAdapter extends PagerAdapter {
 
+    Argument argument;
+
+    public ReadingTabPagerAdapter(Argument argument) {
+        this.argument = argument;
+    }
+
     @Override
     public int getCount() {
         return 3;
@@ -29,22 +35,25 @@ public class ReadingTabPagerAdapter extends PagerAdapter {
 
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
-        View view;
         switch (position) {
             case 0:
-                view = new ReadClaimView(container.getContext());
-                break;
+                ReadClaimView viewClaim = new ReadClaimView(container.getContext());
+                viewClaim.setText(argument.claim);
+                container.addView(viewClaim);
+                return viewClaim;
             case 1:
-                view = new ReadEvidenceView(container.getContext());
-                break;
+                ReadEvidenceView viewEvidence = new ReadEvidenceView(container.getContext());
+                viewEvidence.setText(argument.evidence);
+                container.addView(viewEvidence);
+                return viewEvidence;
             case 2:
-                view = new ReadJustificationView(container.getContext());
-                break;
+                ReadJustificationView viewJustification = new ReadJustificationView(container.getContext());
+                viewJustification.setText(argument.justification);
+                container.addView(viewJustification);
+                return viewJustification;
             default:
-                view = new View(container.getContext());
+                return null;
         }
-        container.addView(view);
-        return view;
     }
 
     @Override

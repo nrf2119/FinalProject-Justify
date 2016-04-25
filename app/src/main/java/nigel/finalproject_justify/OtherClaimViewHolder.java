@@ -28,7 +28,10 @@ public class OtherClaimViewHolder extends RecyclerView.ViewHolder {
 
     public void bind(final Argument otherClaim) {
         userNameView.setText(otherClaim.user);
-//        positionPhotoView.setImageResource(otherClaim.positionPhotoId);
+        if (otherClaim.agreement)
+            positionPhotoView.setImageResource(R.drawable.icon_agree);
+        else
+            positionPhotoView.setImageResource(R.drawable.icon_disagree);
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

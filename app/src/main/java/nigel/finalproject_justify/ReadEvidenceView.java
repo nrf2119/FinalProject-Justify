@@ -39,4 +39,8 @@ public class ReadEvidenceView extends FrameLayout {
         textView = (TextView) findViewById(R.id.otherevidencetext);
         textView.setText("This is my position");
     }
+
+    public void setText(String text) {
+        textView.setText(text);
+    }
 }

@@ -39,4 +39,8 @@ public class ReadClaimView extends FrameLayout {
         textView = (TextView) findViewById(R.id.otherclaimtext);
         textView.setText("This is my position");
     }
+
+    public void setText(String text) {
+        textView.setText(text);
+    }
 }

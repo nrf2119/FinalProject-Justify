@@ -6,7 +6,6 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
-import android.widget.TextView;
 
 public class ReadArgumentActivity extends AppCompatActivity {
 
@@ -14,9 +13,9 @@ public class ReadArgumentActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private EditText inputMessage;
     private Argument argument;
-    private TextView readClaimTextView;
-    private TextView readEvidenceTextView;
-    private TextView readJustificationTextView;
+//    private TextView readClaimTextView;
+//    private TextView readEvidenceTextView;
+//    private TextView readJustificationTextView;
 
 
     @Override
@@ -26,15 +25,16 @@ public class ReadArgumentActivity extends AppCompatActivity {
         viewPager = (ViewPager) findViewById(R.id.reading_view_pager);
         tabLayout = (TabLayout) findViewById(R.id.reading_tabs);
 
-        viewPager.setAdapter(new ReadingTabPagerAdapter());
-        tabLayout.setupWithViewPager(viewPager);
-
-        readClaimTextView = (TextView) findViewById(R.id.otherclaimtext);
-        readEvidenceTextView = (TextView) findViewById(R.id.otherevidencetext);
-        readJustificationTextView = (TextView) findViewById(R.id.otherjustificationtext);
-
         Intent intent = getIntent();
         argument = (Argument) intent.getSerializableExtra(Keys.CHOSEN_INQUIRY_CARD);
+
+        viewPager.setAdapter(new ReadingTabPagerAdapter(argument));
+        tabLayout.setupWithViewPager(viewPager);
+
+//        readClaimTextView = (TextView) findViewById(R.id.otherclaimtext);
+//        readEvidenceTextView = (TextView) findViewById(R.id.otherevidencetext);
+//        readJustificationTextView = (TextView) findViewById(R.id.otherjustificationtext);
+//        readClaimTextView.setText(argument.claim);
 
 //        readClaimTextView.setText(argument.claim);
 //        readEvidenceTextView.setText(argument.evidence);
