@@ -11,11 +11,5 @@
         android:text="This is other's position"
         android:id="@+id/otherjustificationtext" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/justificationinput"
-        android:text="This is other's justification"
-        android:layout_marginTop="150dp" />
 
 </LinearLayout>

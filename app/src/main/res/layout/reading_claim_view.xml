@@ -11,11 +11,5 @@
         android:layout_marginTop="100dp"
         android:id="@+id/otherclaimtext" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/claiminput"
-        android:text="This is other's claim"
-        android:layout_marginTop="150dp" />
 
 </LinearLayout>

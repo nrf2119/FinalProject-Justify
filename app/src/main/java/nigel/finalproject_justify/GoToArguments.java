@@ -30,13 +30,6 @@ public class GoToArguments extends AppCompatActivity {
         rootRef = new Firebase("https://justify.firebaseio.com/");
         Firebase inquiriesRef = rootRef.child("inquiries");
 
-        //What was here before we got data from firebase
-//        RecyclerView mrRecyclerView = (RecyclerView) findViewById(R.id.inquiry_recycler_view);
-//        mrRecyclerView.setHasFixedSize(true);
-//        mrRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-//        inquiryAdapter = new InquiriesAdapter(inquiries, keys, this, false);
-//        mrRecyclerView.setAdapter(inquiryAdapter);
-
 
         RecyclerView mrRecyclerView = (RecyclerView) findViewById(R.id.inquiry_recycler_view);
         mrRecyclerView.setHasFixedSize(true);

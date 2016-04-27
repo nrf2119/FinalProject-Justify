@@ -24,16 +24,20 @@
             android:parentActivityName=".MainActivity"></activity>
         <activity
             android:name=".MakeArgumentActivity"
+            android:parentActivityName=".InquiryActivity"></activity>
+        <activity
+            android:name=".GoToArguments"
             android:parentActivityName=".MainActivity"></activity>
-        <activity android:name=".GoToArguments"></activity>
         <activity
             android:name=".SeeOthersActivity"
-            android:parentActivityName=".MainActivity"></activity>
+            android:parentActivityName=".GoToArguments"></activity>
 
         <activity
             android:name=".PositionActivity"
             android:parentActivityName=".InquiryActivity" />
-        <activity android:name=".ReadArgumentActivity"></activity>
+        <activity
+            android:name=".ReadArgumentActivity"
+            android:parentActivityName=".SeeOthersActivity"></activity>
     </application>
 
 </manifest>

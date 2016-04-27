@@ -48,8 +48,8 @@ public class SeeOthersActivity extends AppCompatActivity {
         otherClaimsAdapter = new OtherClaimsAdapter(argumentsRef, this);
         mrRecyclerView.setAdapter(otherClaimsAdapter);
 
-        if (argument.agreement)
-            imageView.setImageResource(R.drawable.icon_agree);
+//        if (argument.agreement)
+//            imageView.setImageResource(R.drawable.icon_agree);
 
     }
 
