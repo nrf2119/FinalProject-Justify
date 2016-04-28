@@ -27,6 +27,7 @@ public class MakeArgumentActivity extends AppCompatActivity {
 
     String key;
     private boolean agreement;
+    String nameThatAppears;
 
 
     @Override
@@ -42,11 +43,10 @@ public class MakeArgumentActivity extends AppCompatActivity {
         Intent intent = getIntent();
         key = intent.getStringExtra(Keys.CHOSEN_INQUIRY_KEY).toString();
         agreement = intent.getBooleanExtra(Keys.AGREE_OR_DISAGREE, false);
+        nameThatAppears = intent.getStringExtra(Keys.NAME_THAT_APPEARS).toString();
     }
 
     public void publish(View view) {
-//        Intent intent = new Intent(this, SeeOthersActivity.class);
-//        startActivity(intent);
 
         EditText editText1 = (EditText) findViewById(R.id.inputClaim);
         EditText editText2 = (EditText) findViewById(R.id.inputEvidence);
@@ -55,7 +55,7 @@ public class MakeArgumentActivity extends AppCompatActivity {
         String one = editText1.getText().toString();
         String two = editText2.getText().toString();
         String three = editText3.getText().toString();
-        String user = "user";
+        String user = nameThatAppears;
 
         Argument argument = new Argument(one, two, three, user);
         argument.agreement = agreement;
