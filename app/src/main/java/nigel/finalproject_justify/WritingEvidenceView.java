@@ -3,6 +3,8 @@ package nigel.finalproject_justify;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.util.AttributeSet;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 
@@ -37,5 +39,9 @@ public class WritingEvidenceView extends FrameLayout {
 
     private void init() {
         inflate(getContext(), R.layout.writing_evidence_view, this);
+        WebView webView = (WebView) findViewById(R.id.web_view_1);
+        webView.setWebViewClient(new WebViewClient());
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.loadUrl("http://google.com/");
     }
 }
