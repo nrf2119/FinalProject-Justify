@@ -33,6 +33,7 @@ public class SeeOthersActivity extends AppCompatActivity {
         setContentView(R.layout.activity_see_others);
 
         rootRef = new Firebase("https://justify.firebaseio.com/");
+
         otherClaimsUserTextView = (TextView) findViewById(R.id.other_user_name);
         imageView = (ImageView) findViewById(R.id.position_photo);
 
@@ -40,6 +41,16 @@ public class SeeOthersActivity extends AppCompatActivity {
         argument = (Argument) intent.getSerializableExtra(Keys.CHOSEN_INQUIRY_CARD);
         key = intent.getStringExtra(Keys.CHOSEN_INQUIRY_KEY);
 
+
+
+//        if (argument.agreement)
+//            imageView.setImageResource(R.drawable.icon_agree);
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         Firebase argumentsRef = rootRef.child("inquiries/" + key + "/arguments");
 
         RecyclerView mrRecyclerView = (RecyclerView) findViewById(R.id.others_recycler_view);
@@ -47,12 +58,7 @@ public class SeeOthersActivity extends AppCompatActivity {
         mrRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         otherClaimsAdapter = new OtherClaimsAdapter(argumentsRef, this);
         mrRecyclerView.setAdapter(otherClaimsAdapter);
-
-//        if (argument.agreement)
-//            imageView.setImageResource(R.drawable.icon_agree);
-
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -13,7 +13,8 @@
         android:id="@+id/other_claims_question"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Do you think this argument is justified?"
+        android:text="These are the arguments!"
+        android:textSize="20sp"
         android:padding="16dp"/>
 
     <android.support.v7.widget.RecyclerView

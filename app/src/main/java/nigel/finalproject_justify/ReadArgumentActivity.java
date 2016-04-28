@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.widget.EditText;
 
 public class ReadArgumentActivity extends AppCompatActivity {
@@ -13,9 +14,6 @@ public class ReadArgumentActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private EditText inputMessage;
     private Argument argument;
-//    private TextView readClaimTextView;
-//    private TextView readEvidenceTextView;
-//    private TextView readJustificationTextView;
 
 
     @Override
@@ -30,20 +28,17 @@ public class ReadArgumentActivity extends AppCompatActivity {
 
         viewPager.setAdapter(new ReadingTabPagerAdapter(argument));
         tabLayout.setupWithViewPager(viewPager);
-
-//        readClaimTextView = (TextView) findViewById(R.id.otherclaimtext);
-//        readEvidenceTextView = (TextView) findViewById(R.id.otherevidencetext);
-//        readJustificationTextView = (TextView) findViewById(R.id.otherjustificationtext);
-//        readClaimTextView.setText(argument.claim);
-
-//        readClaimTextView.setText(argument.claim);
-//        readEvidenceTextView.setText(argument.evidence);
-//        readJustificationTextView.setText(argument.justification);
     }
 
-//    protected void onPause() {
-//        super.onPause();
-//    }
 
-
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 }
