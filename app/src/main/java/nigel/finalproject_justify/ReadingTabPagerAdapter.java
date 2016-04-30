@@ -44,6 +44,7 @@ public class ReadingTabPagerAdapter extends PagerAdapter {
             case 1:
                 ReadEvidenceView viewEvidence = new ReadEvidenceView(container.getContext());
                 viewEvidence.setText(argument.evidence);
+                viewEvidence.setWebView1(argument.webUrl);
                 container.addView(viewEvidence);
                 return viewEvidence;
             case 2:

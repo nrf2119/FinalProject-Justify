@@ -8,14 +8,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="This is other's position"
+        android:layout_weight="1"
         android:id="@+id/otherevidencetext"
-        android:layout_marginTop="100dp" />
+        android:layout_marginTop="20dp" />
 
-    <TextView
+    <WebView
+        android:id="@+id/web_view_2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/evidenceinput"
-        android:text="This is other's evidence"
-        android:layout_marginTop="150dp" />
+        android:layout_height="0dp"
+        android:layout_weight="4" />
 
 </LinearLayout>

@@ -15,15 +15,14 @@ public class Argument implements Serializable {
     public String webUrl;
 
     public Argument() {
-        this("", "", "", "", "");
+        this("", "", "", "");
     }
 
-    public Argument(String claim, String evidence, String justification, String user, String webUrl) {
+    public Argument(String claim, String evidence, String justification, String user) {
         this.claim = claim;
         this.evidence = evidence;
         this.justification = justification;
         this.user = user;
-        this.webUrl = webUrl;
     }
     //one change :)
 }

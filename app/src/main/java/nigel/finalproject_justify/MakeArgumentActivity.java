@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -28,6 +29,8 @@ public class MakeArgumentActivity extends AppCompatActivity {
     String key;
     private boolean agreement;
     String nameThatAppears;
+    WebView webView;
+
 
 
     @Override
@@ -51,6 +54,7 @@ public class MakeArgumentActivity extends AppCompatActivity {
         EditText editText1 = (EditText) findViewById(R.id.inputClaim);
         EditText editText2 = (EditText) findViewById(R.id.inputEvidence);
         EditText editText3 = (EditText) findViewById(R.id.inputJustification);
+        WebView webView = (WebView) findViewById(R.id.web_view_1);
 
         String one = editText1.getText().toString();
         String two = editText2.getText().toString();
@@ -59,6 +63,7 @@ public class MakeArgumentActivity extends AppCompatActivity {
 
         Argument argument = new Argument(one, two, three, user);
         argument.agreement = agreement;
+        argument.webUrl = webView.getUrl();
 
         rootRef = new Firebase("https://justify.firebaseio.com/");
         rootRef.child("inquiries/" + key + "/arguments").push().setValue(argument);
@@ -66,7 +71,9 @@ public class MakeArgumentActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
 
-        Toast.makeText(this, "You have published an argument", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "You have published an argument", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, argument.webUrl, Toast.LENGTH_SHORT).show();
+
     }
 
 

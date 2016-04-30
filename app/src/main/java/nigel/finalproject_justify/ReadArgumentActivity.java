@@ -28,6 +28,8 @@ public class ReadArgumentActivity extends AppCompatActivity {
 
         viewPager.setAdapter(new ReadingTabPagerAdapter(argument));
         tabLayout.setupWithViewPager(viewPager);
+
+
     }
 
 
