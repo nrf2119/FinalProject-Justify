@@ -12,16 +12,18 @@ public class Argument implements Serializable {
     public String user;
     public String positionPhoto;
     public boolean agreement;
+    public String webUrl;
 
     public Argument() {
-        this("", "", "", "");
+        this("", "", "", "", "");
     }
 
-    public Argument(String claim, String evidence, String justification, String user) {
+    public Argument(String claim, String evidence, String justification, String user, String webUrl) {
         this.claim = claim;
         this.evidence = evidence;
         this.justification = justification;
         this.user = user;
+        this.webUrl = webUrl;
     }
     //one change :)
 }
