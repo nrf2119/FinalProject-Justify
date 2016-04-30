@@ -9,7 +9,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.webkit.WebView;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -28,9 +27,7 @@ public class MakeArgumentActivity extends AppCompatActivity {
 
     String key;
     private boolean agreement;
-    private WebView webView1;
-    private String webUrl;
-
+    String nameThatAppears;
 
 
     @Override
@@ -46,12 +43,7 @@ public class MakeArgumentActivity extends AppCompatActivity {
         Intent intent = getIntent();
         key = intent.getStringExtra(Keys.CHOSEN_INQUIRY_KEY).toString();
         agreement = intent.getBooleanExtra(Keys.AGREE_OR_DISAGREE, false);
-
-        //Introducing the webs:
-    }
-
-    public void getUrl(View view) {
-        webUrl = webView1.getUrl();
+        nameThatAppears = intent.getStringExtra(Keys.NAME_THAT_APPEARS).toString();
     }
 
     public void publish(View view) {
@@ -63,9 +55,9 @@ public class MakeArgumentActivity extends AppCompatActivity {
         String one = editText1.getText().toString();
         String two = editText2.getText().toString();
         String three = editText3.getText().toString();
-        String user = "user";
+        String user = nameThatAppears;
 
-        Argument argument = new Argument(one, two, three, user, webUrl);
+        Argument argument = new Argument(one, two, three, user);
         argument.agreement = agreement;
 
         rootRef = new Firebase("https://justify.firebaseio.com/");
@@ -75,8 +67,6 @@ public class MakeArgumentActivity extends AppCompatActivity {
         startActivity(intent);
 
         Toast.makeText(this, "You have published an argument", Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, webUrl, Toast.LENGTH_SHORT).show();
-
     }
 
 
@@ -106,7 +96,7 @@ public class MakeArgumentActivity extends AppCompatActivity {
 //
 //                    finish();//finish activity
 //                } else
-                    Toast.makeText(MakeArgumentActivity.this, "Please enter a message.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MakeArgumentActivity.this, "Please enter a message.", Toast.LENGTH_SHORT).show();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

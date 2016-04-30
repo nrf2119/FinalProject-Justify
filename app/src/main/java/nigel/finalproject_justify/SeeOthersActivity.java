@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,11 +19,13 @@ public class SeeOthersActivity extends AppCompatActivity {
     private List<Argument> otherClaims;
     private OtherClaimsAdapter otherClaimsAdapter;
     private TextView otherClaimsUserTextView;
+    private ImageView imageView;
 
     private Firebase rootRef;
     private Firebase argsRef;
     String key;
     Argument argument;
+    //updATED
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +35,7 @@ public class SeeOthersActivity extends AppCompatActivity {
         rootRef = new Firebase("https://justify.firebaseio.com/");
 
         otherClaimsUserTextView = (TextView) findViewById(R.id.other_user_name);
+        imageView = (ImageView) findViewById(R.id.position_photo);
 
         Intent intent = getIntent();
         argument = (Argument) intent.getSerializableExtra(Keys.CHOSEN_INQUIRY_CARD);
