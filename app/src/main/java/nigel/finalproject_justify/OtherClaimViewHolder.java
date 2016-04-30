@@ -38,7 +38,6 @@ public class OtherClaimViewHolder extends RecyclerView.ViewHolder {
                 Intent intent = new Intent(context, ReadArgumentActivity.class);
                 intent.putExtra(Keys.CHOSEN_INQUIRY_CARD, otherClaim);
                 context.startActivity(intent);
-//                Toast.makeText(context, userNameView.getText(), Toast.LENGTH_SHORT).show();
             }
         });
     }

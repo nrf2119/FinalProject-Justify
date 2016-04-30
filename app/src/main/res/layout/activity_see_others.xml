@@ -13,15 +13,15 @@
         android:id="@+id/other_claims_question"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="16dp"
         android:text="These are the arguments!"
-        android:textSize="20sp"
-        android:padding="16dp"/>
+        android:textSize="20sp" />
 
     <android.support.v7.widget.RecyclerView
+        android:id="@+id/others_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/other_claims_question"
-        android:id="@+id/others_recycler_view">
+        android:layout_below="@id/other_claims_question">
 
     </android.support.v7.widget.RecyclerView>
 

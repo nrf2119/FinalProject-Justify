@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
 
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
@@ -17,8 +16,6 @@ public class MainActivity extends AppCompatActivity {
     private Firebase userRef;
     private Firebase.AuthStateListener authStateListener;
 
-    private EditText keyEditText;
-    private EditText valueEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
     public void goToQuestions(View view) {
         Intent intent = new Intent(this, InquiryActivity.class);
         startActivity(intent);
-
     }
 
     public void goToArguments(View view) {

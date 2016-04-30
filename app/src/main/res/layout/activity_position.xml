@@ -13,9 +13,9 @@
     <include layout="@layout/card_view_inquiry" />
 
     <EditText
+        android:id="@+id/user_name_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/user_name_edit_text"
         android:hint="Write your name here" />
 
     <LinearLayout
@@ -27,14 +27,14 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Agree"
-            android:onClick="agree"/>
+            android:onClick="agree"
+            android:text="Agree" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Disagree"
-            android:onClick="disagree"/>
+            android:onClick="disagree"
+            android:text="Disagree" />
 
     </LinearLayout>
 

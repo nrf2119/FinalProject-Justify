@@ -32,7 +32,7 @@ public class ReadJustificationView extends FrameLayout {
     public ReadJustificationView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         init();
-    }//this only contains one object, whoch the customview, we cannot adjust this
+    }//this only contains one object, which the customview, we cannot adjust this
 
     private void init() {
         inflate(getContext(), R.layout.reading_justification_view, this);

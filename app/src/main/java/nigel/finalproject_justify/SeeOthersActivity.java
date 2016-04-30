@@ -25,7 +25,8 @@ public class SeeOthersActivity extends AppCompatActivity {
     private Firebase argsRef;
     String key;
     Argument argument;
-    //updATED
+
+    TextView questionTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,7 @@ public class SeeOthersActivity extends AppCompatActivity {
         setContentView(R.layout.activity_see_others);
 
         rootRef = new Firebase("https://justify.firebaseio.com/");
+        questionTextView = (TextView) findViewById(R.id.other_claims_question);
 
         otherClaimsUserTextView = (TextView) findViewById(R.id.other_user_name);
         imageView = (ImageView) findViewById(R.id.position_photo);
@@ -40,12 +42,6 @@ public class SeeOthersActivity extends AppCompatActivity {
         Intent intent = getIntent();
         argument = (Argument) intent.getSerializableExtra(Keys.CHOSEN_INQUIRY_CARD);
         key = intent.getStringExtra(Keys.CHOSEN_INQUIRY_KEY);
-
-
-
-//        if (argument.agreement)
-//            imageView.setImageResource(R.drawable.icon_agree);
-
     }
 
     @Override

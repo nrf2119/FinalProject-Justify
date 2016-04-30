@@ -31,7 +31,7 @@ public class WritingJustificationView extends FrameLayout {
     public WritingJustificationView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         init();
-    }//this only contains one object, whoch the customview, we cannot adjust this
+    }//this only contains one object, which the customview, we cannot adjust this
 
     private void init() {
         inflate(getContext(), R.layout.writing_justification_view, this);

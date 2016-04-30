@@ -6,13 +6,11 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.widget.EditText;
 
 public class ReadArgumentActivity extends AppCompatActivity {
 
     private ViewPager viewPager;
     private TabLayout tabLayout;
-    private EditText inputMessage;
     private Argument argument;
 
 

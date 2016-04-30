@@ -24,5 +24,5 @@ public class Argument implements Serializable {
         this.justification = justification;
         this.user = user;
     }
-    //one change :)
+
 }
