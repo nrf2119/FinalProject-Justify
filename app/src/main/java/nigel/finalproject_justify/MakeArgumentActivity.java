@@ -43,6 +43,7 @@ public class MakeArgumentActivity extends AppCompatActivity {
         key = intent.getStringExtra(Keys.CHOSEN_INQUIRY_KEY).toString();
         agreement = intent.getBooleanExtra(Keys.AGREE_OR_DISAGREE, false);
         nameThatAppears = intent.getStringExtra(Keys.NAME_THAT_APPEARS).toString();
+
     }
 
     public void publish(View view) {

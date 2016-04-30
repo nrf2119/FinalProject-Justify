@@ -13,6 +13,7 @@ public class Argument implements Serializable {
     public String positionPhoto;
     public boolean agreement;
     public String webUrl;
+    public String inquiry;
 
     public Argument() {
         this("", "", "", "");

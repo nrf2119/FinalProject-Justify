@@ -25,7 +25,7 @@ public class SeeOthersActivity extends AppCompatActivity {
     private Firebase argsRef;
     String key;
     Argument argument;
-    //lalala
+    Inquiry inquiry;
 
     TextView questionTextView;
 
@@ -43,6 +43,10 @@ public class SeeOthersActivity extends AppCompatActivity {
         Intent intent = getIntent();
         argument = (Argument) intent.getSerializableExtra(Keys.CHOSEN_INQUIRY_CARD);
         key = intent.getStringExtra(Keys.CHOSEN_INQUIRY_KEY);
+
+        inquiry = (Inquiry) intent.getSerializableExtra(Keys.CHOSEN_INQUIRY_CARD);
+        questionTextView.setText(inquiry.question);
+
     }
 
     @Override
