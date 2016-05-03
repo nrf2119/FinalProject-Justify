@@ -15,7 +15,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
             android:layout_marginRight="16dp"
             android:src="@drawable/facebook_school" />
 
@@ -23,10 +23,10 @@
             android:id="@+id/inquiry_question"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
             android:layout_toRightOf="@id/inquiry_photo"
             android:text="Can Facebook be used as a learning tool in schools?"
-            android:textSize="30sp" />
+            android:textSize="20sp" />
 
 
     </RelativeLayout>

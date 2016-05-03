@@ -42,5 +42,6 @@ public class WritingEvidenceView extends FrameLayout {
         WebView webView = (WebView) findViewById(R.id.web_view_1);
         webView.setWebViewClient(new WebViewClient());
         webView.getSettings().setJavaScriptEnabled(true);
+        webView.loadUrl("http://google.com/");
     }
 }
