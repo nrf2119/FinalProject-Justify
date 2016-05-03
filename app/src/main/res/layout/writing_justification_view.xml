@@ -12,7 +12,7 @@
         android:singleLine="false"
         android:textColor="#000000"
         android:gravity="top"
-        android:hint="Why does your evidence support your conclusion?"
+        android:hint="Write a statement that connects your evidence to your claim"
         android:textColorHint="#d3d3d3" />
 
     <Button

@@ -4,11 +4,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#FAFAFA"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="nigel.finalproject_justify.MainActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/argue"
+        android:paddingTop="10dp"
+        android:layout_weight="1" />
 
     <TextView
         android:layout_width="match_parent"
@@ -16,38 +25,128 @@
         android:layout_marginTop="15dp"
         android:gravity="center_horizontal"
         android:text="@string/welcome_message"
-        android:textSize="50sp" />
+        android:textSize="30sp" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        android:paddingTop="30dp"
+        android:layout_weight="1">
 
         <TextView
             android:id="@+id/home_inquiry_text_view"
-            android:layout_width="wrap_content"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="20dp"
-            android:background="#e15a86"
+            android:textColor="#FAFAFA"
             android:onClick="goToQuestions"
             android:padding="15dp"
-            android:text="Inquiry"
-            android:textSize="30dp" />
+            android:text="Inquiries"
+            android:textSize="30dp"
+            android:background="@drawable/rounded_corner" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/home_inquiry_text_view"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:background="#5AE1B5"
+            android:background="@drawable/rounded_corner2"
             android:onClick="goToArguments"
             android:padding="15dp"
+            android:textColor="#FAFAFA"
             android:text="Arguments"
             android:textSize="30dp" />
-
     </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <LinearLayout
+            android:id="@+id/settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:clickable="true"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:layout_gravity="center"
+                android:src="@drawable/settings" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Settings" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/instructions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:clickable="true"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:layout_gravity="center"
+                android:src="@drawable/instructions" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Instructions" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/about_Us"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:clickable="true"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="24dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:layout_gravity="center"
+                android:src="@drawable/about_us" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="About Us"
+
+                android:layout_alignBottom="@+id/settings" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 
 </LinearLayout>

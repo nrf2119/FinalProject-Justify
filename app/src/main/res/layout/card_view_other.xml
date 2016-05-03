@@ -5,10 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="@drawable/rounded_corner3">
 
         <ImageView
             android:id="@+id/position_photo"
@@ -25,9 +27,10 @@
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@id/position_photo"
             android:text="Barack Obama"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:layout_gravity="center_vertical" />
 
 
-    </RelativeLayout>
+    </LinearLayout>
 
 </android.support.v7.widget.CardView>
