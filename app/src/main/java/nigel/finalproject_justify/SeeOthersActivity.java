@@ -38,7 +38,7 @@ public class SeeOthersActivity extends AppCompatActivity {
         imageView = (ImageView) findViewById(R.id.position_photo);
 
         Intent intent = getIntent();
-        argument = (Argument) intent.getSerializableExtra(Keys.CHOSEN_INQUIRY_CARD);
+//        argument = (Argument) intent.getSerializableExtra(Keys.CHOSEN_INQUIRY_CARD);
         key = intent.getStringExtra(Keys.CHOSEN_INQUIRY_KEY);
 
         inquiry = (Inquiry) intent.getSerializableExtra(Keys.CHOSEN_INQUIRY_CARD);
